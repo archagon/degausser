@@ -1,1 +1,1 @@
-![Sproing!](screenshot.png "Sproing!")
+![Sproing!](screenshot.jpg "Sproing!")
