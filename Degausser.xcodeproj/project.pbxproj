@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E20CEFB1FFF5C9900FE666F /* FakeCRTView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E20CEFA1FFF5C9900FE666F /* FakeCRTView.mm */; };
+		4E20CEFD1FFF64D000FE666F /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E20CEFC1FFF62B800FE666F /* screenshot.png */; };
+		4E9FBDA01FF9DF77009E6B8A /* CaptureView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FBD9F1FF9DF77009E6B8A /* CaptureView.mm */; };
+		4EC945D81FFC3C9400EDCB45 /* Helpers.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EC945D71FFC3C9400EDCB45 /* Helpers.mm */; };
+		4EF11A721FF9B22200EA17AD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EF11A711FF9B22200EA17AD /* AppDelegate.mm */; };
+		4EF11A741FF9B22200EA17AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF11A731FF9B22200EA17AD /* Assets.xcassets */; };
+		4EF11A771FF9B22200EA17AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF11A751FF9B22200EA17AD /* MainMenu.xib */; };
+		4EF11A7A1FF9B22200EA17AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF11A791FF9B22200EA17AD /* main.m */; };
+		4EF11A831FF9B37400EA17AD /* DegaussController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EF11A821FF9B37400EA17AD /* DegaussController.mm */; };
+		4EF11A851FF9D53D00EA17AD /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF11A841FF9D53C00EA17AD /* Controller.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E20CEF91FFF5C9900FE666F /* FakeCRTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCRTView.h; sourceTree = "<group>"; };
+		4E20CEFA1FFF5C9900FE666F /* FakeCRTView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeCRTView.mm; sourceTree = "<group>"; };
+		4E20CEFC1FFF62B800FE666F /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		4E3C956620040EF200D177CA /* linalg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linalg.h; sourceTree = "<group>"; };
+		4E9FBD9E1FF9DF77009E6B8A /* CaptureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureView.h; sourceTree = "<group>"; };
+		4E9FBD9F1FF9DF77009E6B8A /* CaptureView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureView.mm; sourceTree = "<group>"; };
+		4EC945D61FFC3C9400EDCB45 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		4EC945D71FFC3C9400EDCB45 /* Helpers.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Helpers.mm; sourceTree = "<group>"; };
+		4EF11A6D1FF9B22200EA17AD /* Degausser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Degausser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF11A701FF9B22200EA17AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4EF11A711FF9B22200EA17AD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		4EF11A731FF9B22200EA17AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EF11A761FF9B22200EA17AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4EF11A781FF9B22200EA17AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF11A791FF9B22200EA17AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4EF11A7B1FF9B22200EA17AD /* Degausser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Degausser.entitlements; sourceTree = "<group>"; };
+		4EF11A811FF9B37400EA17AD /* DegaussController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DegaussController.h; sourceTree = "<group>"; };
+		4EF11A821FF9B37400EA17AD /* DegaussController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DegaussController.mm; sourceTree = "<group>"; };
+		4EF11A841FF9D53C00EA17AD /* Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Controller.m; path = ../../../../../Downloads/SonofGrab/Controller.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EF11A6A1FF9B22200EA17AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EF11A641FF9B22200EA17AD = {
+			isa = PBXGroup;
+			children = (
+				4EF11A6F1FF9B22200EA17AD /* Degausser */,
+				4EF11A6E1FF9B22200EA17AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4EF11A6E1FF9B22200EA17AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EF11A6D1FF9B22200EA17AD /* Degausser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EF11A6F1FF9B22200EA17AD /* Degausser */ = {
+			isa = PBXGroup;
+			children = (
+				4EF11A701FF9B22200EA17AD /* AppDelegate.h */,
+				4EF11A711FF9B22200EA17AD /* AppDelegate.mm */,
+				4EF11A811FF9B37400EA17AD /* DegaussController.h */,
+				4EF11A821FF9B37400EA17AD /* DegaussController.mm */,
+				4E9FBD9E1FF9DF77009E6B8A /* CaptureView.h */,
+				4E9FBD9F1FF9DF77009E6B8A /* CaptureView.mm */,
+				4E20CEF91FFF5C9900FE666F /* FakeCRTView.h */,
+				4E20CEFA1FFF5C9900FE666F /* FakeCRTView.mm */,
+				4EC945D61FFC3C9400EDCB45 /* Helpers.h */,
+				4EC945D71FFC3C9400EDCB45 /* Helpers.mm */,
+				4E3C956620040EF200D177CA /* linalg.h */,
+				4EF11A841FF9D53C00EA17AD /* Controller.m */,
+				4E20CEFC1FFF62B800FE666F /* screenshot.png */,
+				4EF11A731FF9B22200EA17AD /* Assets.xcassets */,
+				4EF11A751FF9B22200EA17AD /* MainMenu.xib */,
+				4EF11A781FF9B22200EA17AD /* Info.plist */,
+				4EF11A791FF9B22200EA17AD /* main.m */,
+				4EF11A7B1FF9B22200EA17AD /* Degausser.entitlements */,
+			);
+			path = Degausser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EF11A6C1FF9B22200EA17AD /* Degausser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EF11A7E1FF9B22200EA17AD /* Build configuration list for PBXNativeTarget "Degausser" */;
+			buildPhases = (
+				4EF11A691FF9B22200EA17AD /* Sources */,
+				4EF11A6A1FF9B22200EA17AD /* Frameworks */,
+				4EF11A6B1FF9B22200EA17AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Degausser;
+			productName = Degausser;
+			productReference = 4EF11A6D1FF9B22200EA17AD /* Degausser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EF11A651FF9B22200EA17AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Alexei Baboulevitch";
+				TargetAttributes = {
+					4EF11A6C1FF9B22200EA17AD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4EF11A681FF9B22200EA17AD /* Build configuration list for PBXProject "Degausser" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EF11A641FF9B22200EA17AD;
+			productRefGroup = 4EF11A6E1FF9B22200EA17AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EF11A6C1FF9B22200EA17AD /* Degausser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EF11A6B1FF9B22200EA17AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF11A741FF9B22200EA17AD /* Assets.xcassets in Resources */,
+				4E20CEFD1FFF64D000FE666F /* screenshot.png in Resources */,
+				4EF11A771FF9B22200EA17AD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EF11A691FF9B22200EA17AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF11A7A1FF9B22200EA17AD /* main.m in Sources */,
+				4EF11A831FF9B37400EA17AD /* DegaussController.mm in Sources */,
+				4E20CEFB1FFF5C9900FE666F /* FakeCRTView.mm in Sources */,
+				4E9FBDA01FF9DF77009E6B8A /* CaptureView.mm in Sources */,
+				4EC945D81FFC3C9400EDCB45 /* Helpers.mm in Sources */,
+				4EF11A721FF9B22200EA17AD /* AppDelegate.mm in Sources */,
+				4EF11A851FF9D53D00EA17AD /* Controller.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4EF11A751FF9B22200EA17AD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EF11A761FF9B22200EA17AD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4EF11A7C1FF9B22200EA17AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4EF11A7D1FF9B22200EA17AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4EF11A7F1FF9B22200EA17AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Degausser/Degausser.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R4MX2B96J2;
+				INFOPLIST_FILE = Degausser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexei-Baboulevitch.Degausser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4EF11A801FF9B22200EA17AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Degausser/Degausser.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R4MX2B96J2;
+				INFOPLIST_FILE = Degausser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexei-Baboulevitch.Degausser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EF11A681FF9B22200EA17AD /* Build configuration list for PBXProject "Degausser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF11A7C1FF9B22200EA17AD /* Debug */,
+				4EF11A7D1FF9B22200EA17AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF11A7E1FF9B22200EA17AD /* Build configuration list for PBXNativeTarget "Degausser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF11A7F1FF9B22200EA17AD /* Debug */,
+				4EF11A801FF9B22200EA17AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EF11A651FF9B22200EA17AD /* Project object */;
+}
