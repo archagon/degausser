@@ -21,6 +21,46 @@ const NSWindowCollectionBehavior kStickyWindowCollectionBehavior =
 @implementation Helpers
 @end
 
+// https://stackoverflow.com/a/14646734/89812
+CGFloat CircleCircleIntersection(CGPoint c0, CGFloat r0, CGPoint c1, CGFloat r1)
+{
+    auto rr0 = r0 * r0;
+    auto rr1 = r1 * r1;
+    auto d = sqrt(pow((c1.x - c0.x), 2) + pow((c1.y - c0.y), 2));
+    
+    // circles do not overlap
+    if (d > r1 + r0)
+    {
+        return 0;
+    }
+    
+    // c1 is completely inside c0
+    else if (d <= ABS(r0 - r1) && r0 >= r1)
+    {
+        // area of c1
+        return M_PI * rr1;
+    }
+    
+    // c0 is completely inside c1
+    else if (d <= ABS(r0 - r1) && r0 < r1)
+    {
+        // area of circle0
+        return M_PI * rr0;
+    }
+    
+    // circles partially overlap
+    else
+    {
+        auto phi = (acos((rr0 + (d * d) - rr1) / (2 * r0 * d))) * 2;
+        auto theta = (acos((rr1 + (d * d) - rr0) / (2 * r1 * d))) * 2;
+        auto area1 = 0.5 * theta * rr1 - 0.5 * rr1 * sin(theta);
+        auto area2 = 0.5 * phi * rr0 - 0.5 * rr0 * sin(phi);
+        
+        // area of intersection
+        return area1 + area2;
+    }
+}
+
 // MARK: - Perlin -
 
 CF_INLINE CFHashCode CFHashInt(long i) {
@@ -113,44 +153,4 @@ CGFloat OctavePerlinNoise(CGFloat x, CGFloat y, CGFloat z, int octaves, CGFloat 
     }
     
     return total / maxValue;
-}
-
-// https://stackoverflow.com/a/14646734/89812
-CGFloat CircleCircleIntersection(CGPoint c0, CGFloat r0, CGPoint c1, CGFloat r1)
-{
-    auto rr0 = r0 * r0;
-    auto rr1 = r1 * r1;
-    auto d = sqrt(pow((c1.x - c0.x), 2) + pow((c1.y - c0.y), 2));
-    
-    // circles do not overlap
-    if (d > r1 + r0)
-    {
-        return 0;
-    }
-    
-    // c1 is completely inside c0
-    else if (d <= ABS(r0 - r1) && r0 >= r1)
-    {
-        // area of c1
-        return M_PI * rr1;
-    }
-    
-    // c0 is completely inside c1
-    else if (d <= ABS(r0 - r1) && r0 < r1)
-    {
-        // area of circle0
-        return M_PI * rr0;
-    }
-    
-    // circles partially overlap
-    else
-    {
-        auto phi = (acos((rr0 + (d * d) - rr1) / (2 * r0 * d))) * 2;
-        auto theta = (acos((rr1 + (d * d) - rr0) / (2 * r1 * d))) * 2;
-        auto area1 = 0.5 * theta * rr1 - 0.5 * rr1 * sin(theta);
-        auto area2 = 0.5 * phi * rr0 - 0.5 * rr0 * sin(phi);
-        
-        // area of intersection
-        return area1 + area2;
-    }
 }

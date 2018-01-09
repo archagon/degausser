@@ -23,7 +23,7 @@ using namespace linalg;
 @implementation FakeCRTView
 
 static CGFloat ratio = 0.625;
-static CGFloat vWidth = 400;
+static CGFloat vWidth = 500;
 static CGFloat vHeight = round(vWidth * ratio);
 
 /* Our perlin grid mostly has the same resolution as our buffer, but with depth and an extra border on the sides
@@ -37,7 +37,7 @@ static CGFloat pDepth = 20;
 static CGFloat pFuncWidth = 2.5;
 static CGFloat pFuncHeight = pFuncWidth * ratio;
 static CGFloat pGeometryScale = 80; //blobbiness
-static CGFloat pNormalReach = 0.3 * vHeight; //foldiness
+static CGFloat pNormalReach = 0.4 * vHeight; //foldiness
 static CGFloat pSamplingWidth = pBorder * 0.75;
 static int pSamplingSideCount = 5; //only odd
 
@@ -228,17 +228,19 @@ static CGFloat PerlinValue(CGFloat p)
                     
                     auto rect = NSMakeRect(dx, dy, 1, 1);
                     
+                    auto colors = [self colorRatiosForPixel1X:dx Y:dy fromPixel0X:x Y:y];
+                    
                     CGContextSetBlendMode(bctx, kCGBlendModeClear);
                     CGContextSetRGBFillColor(bctx, 0, 0, 0, 1.0);
                     CGContextFillRect(bctx, rect);
                     
                     auto color = [self screenshotPixelXPercent:x / (vWidth - 1) yPercent:y / (vHeight - 1)];
                     CGContextSetBlendMode(bctx, kCGBlendModePlusLighter);
-                    CGContextSetRGBFillColor(bctx, color.redComponent, 0, 0, 1.0);
+                    CGContextSetRGBFillColor(bctx, color.redComponent * colors.x, 0, 0, 1.0);
                     CGContextFillRect(bctx, rect);
-                    CGContextSetRGBFillColor(bctx, 0, color.greenComponent, 0, 1.0);
+                    CGContextSetRGBFillColor(bctx, 0, color.greenComponent * colors.y, 0, 1.0);
                     CGContextFillRect(bctx, rect);
-                    CGContextSetRGBFillColor(bctx, 0, 0, color.blueComponent, 1.0);
+                    CGContextSetRGBFillColor(bctx, 0, 0, color.blueComponent * colors.z, 1.0);
                     CGContextFillRect(bctx, rect);
                     
                     //auto dx0 = floor(dx);
@@ -427,6 +429,39 @@ static CGFloat PerlinValue(CGFloat p)
                            green:data[pixelIndex + 1] / 255.0
                             blue:data[pixelIndex + 2] / 255.0
                            alpha:data[pixelIndex + 3] / 255.0];
+}
+
+-(vec<CGFloat, 3>) colorRatiosForPixel1X:(CGFloat)v1x Y:(CGFloat)v1y fromPixel0X:(CGFloat)v0x Y:(CGFloat)v0y
+{
+    CGFloat r = 0.5;
+    CGFloat cr = 0.25;
+    CGFloat scalar = 0.4;
+    
+    CGFloat ang = (30/360.0) * 2*M_PI;
+    CGFloat d = (r * cos(ang) + cr * (-1 - cos(ang))) / (0.5 + cos(ang));
+    CGFloat dd = 2 * cr + d;
+    CGFloat dx = dd * sin(ang);
+    CGFloat dy = dd * cos(ang);
+    
+    auto bc = vec<CGFloat, 2>(r, d + cr);
+    auto rc = bc + vec<CGFloat, 2>(dx, dy);
+    auto gc = bc + vec<CGFloat, 2>(-dx, dy);
+    
+    auto ca = M_PI * pow(cr, 2);
+ 
+    auto dir = vec<CGFloat, 2>(v1x - v0x, v1y - v0y);
+    auto s = vec<CGFloat, 2>(r, r);
+    auto s0 = s + normalize(dir) * fmod(length(dir) * scalar, r * 2);
+    auto s1 = s + normalize(dir) * (fmod(length(dir) * scalar, r * 2) - r * 2);
+    
+    auto rp0 = CircleCircleIntersection(CGPointMake(rc.x, rc.y), cr, CGPointMake(s0.x, s0.y), r) / ca;
+    auto gp0 = CircleCircleIntersection(CGPointMake(gc.x, gc.y), cr, CGPointMake(s0.x, s0.y), r) / ca;
+    auto bp0 = CircleCircleIntersection(CGPointMake(bc.x, bc.y), cr, CGPointMake(s0.x, s0.y), r) / ca;
+    auto rp1 = CircleCircleIntersection(CGPointMake(rc.x, rc.y), cr, CGPointMake(s1.x, s1.y), r) / ca;
+    auto gp1 = CircleCircleIntersection(CGPointMake(gc.x, gc.y), cr, CGPointMake(s1.x, s1.y), r) / ca;
+    auto bp1 = CircleCircleIntersection(CGPointMake(bc.x, bc.y), cr, CGPointMake(s1.x, s1.y), r) / ca;
+    
+    return vec<CGFloat, 3>(rp0 + rp1, gp0 + gp1, bp0 + bp1);
 }
 
 @end
